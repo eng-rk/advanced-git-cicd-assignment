@@ -4,10 +4,12 @@
 
 ### Explanation
 
-For our team, I recommend using **Trunk-Based Development** because we are a fast-moving startup.  
+For our team, I recommend using **Trunk-Based Development** because we are a fast-moving startup.
+
 This strategy keeps the workflow simple: developers create short-lived feature branches, open pull requests, and merge quickly into `main` after review and testing.
 
 This is better for a startup because:
+
 - It reduces long merge conflicts.
 - It helps us release faster.
 - It keeps the codebase always close to production-ready.
@@ -57,14 +59,17 @@ To open an interactive rebase for the last 5 commits:
 
 ```bash
 git rebase -i HEAD~5
+```
+
+---
 
 ## 3. The Emergency Surgery - Cherry-Picking
 
 ### Explanation
 
-git cherry-pick copies a specific commit from one branch and applies it to another branch.
+`git cherry-pick` copies a specific commit from one branch and applies it to another branch.
 
-This is useful in emergencies because we can move only the bug fix commit to the main branch without merging the entire develop branch, which may contain unstable code.
+This is useful in emergencies because we can move only the bug fix commit to the `main` branch without merging the entire `develop` branch, which may contain unstable code.
 
 ### Commands
 
@@ -94,7 +99,7 @@ Integration tests should run in CI/CD pipelines because they provide a clean and
 
 Running tests locally may produce different results depending on operating systems, installed packages, or database states.
 
-Using Docker Compose in GitHub Actions ensures the full multi-container application works correctly before merging into the main branch.
+Using Docker Compose in GitHub Actions ensures the full multi-container application works correctly before merging into the `main` branch.
 
 ### GitHub Actions Workflow
 
